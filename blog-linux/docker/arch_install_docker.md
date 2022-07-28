@@ -7,7 +7,7 @@ sudo pacman -S docker
 ```
 sudo systemctl enable --now docker
 ```
-###以当前用户运行docker命令
+### 以当前用户运行docker命令
 ```
 sudo groupadd docker
 
