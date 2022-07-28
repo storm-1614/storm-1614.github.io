@@ -13,6 +13,7 @@
 [uefi安装arch](./setup_archlinux/README.md)  
 [虚拟机安装arch](./vm_build_arch/README.md)   
 [arch安装docker](./docker/arch_install_docker.md)  
+[dwm快捷键](./dwm/dwm快捷键.md)  
 #### nvim  
 [markdown-preview](./nvim/markdown-preview.md)  
 
