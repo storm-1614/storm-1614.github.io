@@ -11,7 +11,8 @@
 [fictx5配置](./fcitx/fcitx5.md)   
 [xorg的触摸板配置](./触摸板/REMDME.md)  
 [uefi安装arch](./setup_archlinux/README.md)  
-[虚拟机安装arch](./vm_build_arch/README.md)  
+[虚拟机安装arch](./vm_build_arch/README.md)   
+[arch安装docker](./docker/arch_install_docker.md)  
 
 ---
 [返回到主页](https://storm-1614.github.io/)
