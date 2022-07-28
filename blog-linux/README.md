@@ -13,6 +13,8 @@
 [uefi安装arch](./setup_archlinux/README.md)  
 [虚拟机安装arch](./vm_build_arch/README.md)   
 [arch安装docker](./docker/arch_install_docker.md)  
+#### nvim  
+[markdown-preview](./nvim/markdown-preview.md)  
 
 ---
 [返回到主页](https://storm-1614.github.io/)
