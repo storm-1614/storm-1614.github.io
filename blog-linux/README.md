@@ -6,7 +6,6 @@
 ### 指向标
 原仓库：[https://github.com/storm-1614/blog-linux](https://github.com/storm-1614/blog-linux)  
   
-[简明vim使用](./vim/简明vim使用.md)   
 [tiling](./plasma/tiling平铺插件使用.md)  
 [fictx5配置](./fcitx/fcitx5.md)   
 [xorg的触摸板配置](./触摸板/REMDME.md)  
@@ -15,7 +14,10 @@
 [arch安装docker](./docker/arch_install_docker.md)  
 [dwm快捷键](./dwm/dwm快捷键.md)  
 #### nvim  
+[简明vim使用](./vim/简明vim使用.md)   
+[nvim配置记录](./nvim/nvim_config.md)  
 [markdown-preview](./nvim/markdown-preview.md)  
+
 
 ---
 [返回到主页](https://storm-1614.github.io/)
