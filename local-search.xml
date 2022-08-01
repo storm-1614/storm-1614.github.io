@@ -11,6 +11,12 @@
     <content type="html"><![CDATA[<p>本来觉得评论系统可有可无，但是看到能够添加评论系统，还是折腾个玩玩吧。没想到折腾成功了！<br>本博客使用的评论系统是<code>utterances</code></p><h3 id="新建仓库"><a href="#新建仓库" class="headerlink" title="新建仓库"></a>新建仓库</h3><p><img src="https://s3.bmp.ovh/imgs/2022/08/01/c22026f63f52b9a5.png"><br>新建一个随便什么名字的仓库，但一定要是<strong>公开仓库</strong>  </p><h3 id="安装utterances"><a href="#安装utterances" class="headerlink" title="安装utterances"></a>安装utterances</h3><p><a href="https://github.com/apps/utterances">点击前往安装</a><br>进入后点击Install就可以安装<br><img src="https://s3.bmp.ovh/imgs/2022/08/01/741b9cc0a9e3b3ac.png"><br>选择刚才建的仓库即可  </p><h3 id="加入hexo配置文件"><a href="#加入hexo配置文件" class="headerlink" title="加入hexo配置文件"></a>加入hexo配置文件</h3><p>在主题文件夹的<code>_config.yml</code>内找到：<br><img src="https://s3.bmp.ovh/imgs/2022/08/01/58afec1c22c95fe0.png"><br>改成框中所示<br>到下面找到这个，然后把repo后面写上用户名&#x2F;仓库<br><img src="https://s3.bmp.ovh/imgs/2022/08/01/4925801eebf4e191.png"></p>]]></content>
     
     
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
     
     <tags>
       
