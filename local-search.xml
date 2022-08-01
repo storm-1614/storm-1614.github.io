@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>plasma的平铺插件</title>
+    <link href="/2022/08/01/plasma%E7%9A%84%E5%B9%B3%E9%93%BA%E6%8F%92%E4%BB%B6/"/>
+    <url>/2022/08/01/plasma%E7%9A%84%E5%B9%B3%E9%93%BA%E6%8F%92%E4%BB%B6/</url>
+    
+    <content type="html"><![CDATA[<h2 id="平铺插件"><a href="#平铺插件" class="headerlink" title="平铺插件"></a>平铺插件</h2><p>我在plasma上使用的是叫grid-tiling的平铺插件，这是一个非常好用的插件，可以在plasma上体验到平铺窗口管理器上的高效  </p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://github.com/lingtjien/Grid-Tiling-Kwin">github</a><br><a href="https://aur.archlinux.org/packages/kwin-script-grid-tiling-git">aur</a></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在arch linux上grid-tiling在aur上，所以我们需要一个aur助手，我选择yay这个aur助手<br>然后输入<code>yay -S kwin-script-grid-tiling-git</code>安装</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="1-切换使用窗口"><a href="#1-切换使用窗口" class="headerlink" title="1.切换使用窗口"></a>1.切换使用窗口</h4><p>使用<code>super + alt + 方向左</code>切换到左边窗口<br>同理，使用<code>super + alt + 方向右</code>切换到右边窗口</p><h4 id="2-更换窗口位置"><a href="#2-更换窗口位置" class="headerlink" title="2.更换窗口位置"></a>2.更换窗口位置</h4><p><code>super + ctrl + 方向左</code>将窗口向左侧移动<br><code>super + ctrl + 方向右</code>将窗口向右侧移动</p><h4 id="3-调整窗口大小"><a href="#3-调整窗口大小" class="headerlink" title="3.调整窗口大小"></a>3.调整窗口大小</h4><p><code>super + +</code>将当前窗口增大<br><code>super + _</code>将当前窗口缩小</p><h4 id="4-其他"><a href="#4-其他" class="headerlink" title="4.其他"></a>4.其他</h4><p><code>super + b</code>显示当前窗口边框<br><code>super + t</code>退出平铺模式</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>KDE</tag>
+      
+      <tag>平铺</tag>
+      
+      <tag>Plasma</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>我的nvim</title>
     <link href="/2022/08/01/%E6%88%91%E7%9A%84nvim/"/>
     <url>/2022/08/01/%E6%88%91%E7%9A%84nvim/</url>
