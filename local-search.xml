@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>Linux的代理配置</title>
+    <link href="/2022/08/01/Linux%E7%9A%84%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/"/>
+    <url>/2022/08/01/Linux%E7%9A%84%E4%BB%A3%E7%90%86%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<p>鉴于国内的特殊环境，用Linux没个代理压根活不下去。而我们选择的代理是Clash<br>Clash默认端口是<code>7890</code>，不会自己配置全局代理，我们需要自己配置<br>打开<code>/etc/profile</code><br>写入：</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros"><span class="hljs-attribute">http_proxy</span>=http://127.0.0.1:7890 <br><span class="hljs-attribute">https_proxy</span>=http://127.0.0.1:7890<br><span class="hljs-attribute">ftp_proxy</span>=http://127.0.0.1:7890<br><span class="hljs-built_in">export</span> http_proxy<br><span class="hljs-built_in">export</span> ftp_proxy<br><span class="hljs-built_in">export</span> https_proxy<br></code></pre></td></tr></table></figure><p>重启即可</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>教程</tag>
+      
+      <tag>代理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>博客评论系统添加记录</title>
     <link href="/2022/08/01/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%B7%BB%E5%8A%A0%E8%AE%B0%E5%BD%95/"/>
     <url>/2022/08/01/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E6%B7%BB%E5%8A%A0%E8%AE%B0%E5%BD%95/</url>
