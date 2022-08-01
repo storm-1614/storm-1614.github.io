@@ -227,7 +227,7 @@
     
     <categories>
       
-      <category>DE</category>
+      <category>WM</category>
       
     </categories>
     
@@ -236,9 +236,9 @@
       
       <tag>ArchLinux</tag>
       
-      <tag>Linux</tag>
-      
       <tag>DWM</tag>
+      
+      <tag>Linux</tag>
       
     </tags>
     
@@ -265,9 +265,9 @@
       
       <tag>ArchLinux</tag>
       
-      <tag>Docker</tag>
-      
       <tag>Linux</tag>
+      
+      <tag>Docker</tag>
       
       <tag>安装</tag>
       
@@ -287,7 +287,7 @@
     
     <categories>
       
-      <category>DE</category>
+      <category>WM</category>
       
     </categories>
     
@@ -296,9 +296,9 @@
       
       <tag>ArchLinux</tag>
       
-      <tag>Linux</tag>
-      
       <tag>DWM</tag>
+      
+      <tag>Linux</tag>
       
       <tag>触摸板</tag>
       
