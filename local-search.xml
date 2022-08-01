@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>hexo配置记录</title>
+    <link href="/2022/08/01/hexo%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/"/>
+    <url>/2022/08/01/hexo%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sh">sudo npm install -g hexo-cli<br></code></pre></td></tr></table></figure><p>通过npm安装hexo<br>我们定期把博客文件备份到阿里云盘，只需要去下载解压就可以</p><hr><p>我们hexo主题是fluid<br>其用户手册:<a href="https://hexo.fluid-dev.com/docs/guide/">https://hexo.fluid-dev.com/docs/guide/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>在虚拟机安装arch</title>
     <link href="/2022/08/01/%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85arch/"/>
     <url>/2022/08/01/%E5%9C%A8%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%AE%89%E8%A3%85arch/</url>
