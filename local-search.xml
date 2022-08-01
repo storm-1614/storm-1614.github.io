@@ -4,6 +4,50 @@
   
   
   <entry>
+    <title>我的nvim</title>
+    <link href="/2022/08/01/%E6%88%91%E7%9A%84nvim/"/>
+    <url>/2022/08/01/%E6%88%91%E7%9A%84nvim/</url>
+    
+    <content type="html"><![CDATA[<h2 id="配置nvim"><a href="#配置nvim" class="headerlink" title="配置nvim"></a>配置nvim</h2><p>###依赖</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yay -S nvim fzf python-pip npm yarn notejs clang<br>pip <span class="hljs-keyword">install</span> neovim<br></code></pre></td></tr></table></figure><h3 id="复制配置文件"><a href="#复制配置文件" class="headerlink" title="复制配置文件"></a>复制配置文件</h3><p>首先复制nvim文件夹到~&#x2F;.config<br>之后打开nvim,运行<code>:PackerSync</code>即可完成插件安装  </p><h3 id="后续配置"><a href="#后续配置" class="headerlink" title="后续配置"></a>后续配置</h3><h4 id="coc-nvim"><a href="#coc-nvim" class="headerlink" title="coc.nvim"></a>coc.nvim</h4><p><code>coc.nivm</code>需要进插件文件夹运行<code>yarn install</code>方可使用  </p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> .<span class="hljs-built_in">local</span>/share/nvim/site/pack/packer/start/coc.nvim/<br>yarn install<br></code></pre></td></tr></table></figure><p>之后打开nvim<br>运行：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">:CocInstall coc-<span class="hljs-keyword">sh</span> coc-clangd coc-html coc-sumneko-<span class="hljs-keyword">lua</span> coc-markdownlint<br></code></pre></td></tr></table></figure><h3 id="插件列表"><a href="#插件列表" class="headerlink" title="插件列表"></a>插件列表</h3><p>插件管理器：packer.nvim<br>主题：nord.nvim<br>lsp：coc.nvim<br>文件查找：nvim-fzf<br>文件树：nvim-tree.lua<br>markdown阅读：markdown-preview.nvim<br>代码高亮：nvim-treesitter<br>状态栏：nvim-lualine<br>颜色块显示：vim-css-color</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Linux</tag>
+      
+      <tag>Neovim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>fcitx5安装配置</title>
+    <link href="/2022/08/01/fcitx5%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"/>
+    <url>/2022/08/01/fcitx5%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="fcitx5安装配置"><a href="#fcitx5安装配置" class="headerlink" title="fcitx5安装配置"></a>fcitx5安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装fcitx5：  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki<br></code></pre></td></tr></table></figure><p>配置环境变量<br>新建文件 <code>~/.pam_environment</code>添加</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">GTK_IM_MODULE <span class="hljs-attribute">DEFAULT</span>=fcitx<br>QT_IM_MODULE  <span class="hljs-attribute">DEFAULT</span>=fcitx<br>XMODIFIERS    <span class="hljs-attribute">DEFAULT</span>=\@im=fcitx<br>INPUT_METHOD  <span class="hljs-attribute">DEFAULT</span>=fcitx<br>SDL_IM_MODULE <span class="hljs-attribute">DEFAULT</span>=fcitx<br>GLFW_IM_MODULE <span class="hljs-attribute">DEFAULT</span>=ibus<br></code></pre></td></tr></table></figure><p>重启后完成</p><h3 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">yay</span> -S fcitx5-nord<br></code></pre></td></tr></table></figure><p>到fcitx5设置-附加组件-经典用户界面-主题调整</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ArchLinux</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>Fcitx5</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>photo</title>
     <link href="/2022/08/01/photo/"/>
     <url>/2022/08/01/photo/</url>
@@ -38,6 +82,31 @@
       <tag>Linux</tag>
       
       <tag>DWM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>ArchLinux安装docker</title>
+    <link href="/2022/08/01/ArchLinux%E5%AE%89%E8%A3%85docker/"/>
+    <url>/2022/08/01/ArchLinux%E5%AE%89%E8%A3%85docker/</url>
+    
+    <content type="html"><![CDATA[<h2 id="arch安装docker"><a href="#arch安装docker" class="headerlink" title="arch安装docker"></a>arch安装docker</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo pacman -S docker</span><br></code></pre></td></tr></table></figure><h3 id="开启docker服务"><a href="#开启docker服务" class="headerlink" title="开启docker服务"></a>开启docker服务</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">sudo systemctl <span class="hljs-keyword">enable</span> <span class="hljs-comment">--now docker</span><br></code></pre></td></tr></table></figure><h3 id="以当前用户运行docker命令"><a href="#以当前用户运行docker命令" class="headerlink" title="以当前用户运行docker命令"></a>以当前用户运行docker命令</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sudo</span> groupadd docker<br><br>sudo gpasswd -a <span class="hljs-variable">$&#123;USER&#125;</span> docker<br><br>newgrp <span class="hljs-variable">$&#123;USER&#125;</span><br></code></pre></td></tr></table></figure><h3 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h3><p>拉取镜像：  </p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker pull image_name</span><br></code></pre></td></tr></table></figure><p>创建容器：<br>以ubuntu镜像，容器名称为linux举例  </p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">docker <span class="hljs-built_in">run</span> -i -t <span class="hljs-comment">--name linux ubuntu bash</span><br></code></pre></td></tr></table></figure><p>运行容器：</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">docker <span class="hljs-literal">start</span> -i linux<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ArchLinux</tag>
+      
+      <tag>安装</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>Docker</tag>
       
     </tags>
     
