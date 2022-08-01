@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>xorg的触摸板配置</title>
+    <link href="/2022/08/01/xorg%E7%9A%84%E8%A7%A6%E6%91%B8%E6%9D%BF%E9%85%8D%E7%BD%AE/"/>
+    <url>/2022/08/01/xorg%E7%9A%84%E8%A7%A6%E6%91%B8%E6%9D%BF%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h2 id="触摸板"><a href="#触摸板" class="headerlink" title="触摸板"></a>触摸板</h2><p>由于dwm的原因，触摸板没办法使用所以我们进行一些配置  </p><blockquote><p>由于本人又回到plasma,plasma触摸板配置不需要另外操心，加上还有许不足，仅供参考</p></blockquote><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S libinput<br>sudo pacman -S xf86-input-synaptics<br></code></pre></td></tr></table></figure><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo cp <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/X11/</span>xorg.conf.d<span class="hljs-regexp">/70-synaptics.conf /</span>etc<span class="hljs-regexp">/X11/</span>xorg.conf.d<br></code></pre></td></tr></table></figure><p>&#x2F;etc&#x2F;X11&#x2F;xorg.conf.d&#x2F;70-synaptics.conf</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">Section</span> <span class="hljs-string">&quot;InputClass&quot;</span><br>Identifier <span class="hljs-string">&quot;touchpad&quot;</span><br>Driver <span class="hljs-string">&quot;synaptics&quot;</span><br>MatchIsTouchpad <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;TapButton1&quot;</span> <span class="hljs-string">&quot;1&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;TapButton2&quot;</span> <span class="hljs-string">&quot;3&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;TapButton3&quot;</span> <span class="hljs-string">&quot;0&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;VertEdgeScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;VertTwoFingerScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;HorizEdgeScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;HorizTwoFingerScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;VertScrollDelta&quot;</span> <span class="hljs-string">&quot;-112&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;HorizScrollDelta&quot;</span> <span class="hljs-string">&quot;-114&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;MaxTapTime&quot;</span> <span class="hljs-string">&quot;125&quot;</span><br>EndSection<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>ArchLinux</tag>
+      
+      <tag>触摸板， Xorg</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>DWM</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>vim使用手册</title>
     <link href="/2022/08/01/vim%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
     <url>/2022/08/01/vim%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</url>
