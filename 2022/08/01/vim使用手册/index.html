@@ -16,24 +16,21 @@
   <meta name="author" content="storm-1614">
   <meta name="keywords" content="">
   
-    <meta name="description" content="准备使用iwctl连网_略换源 12reflector -c China --save &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlistsystemctl stop reflector 调整时间 1timedatectl set-ntp true 分区lsblk看分区名cfdisk分区格式化分区用mkfs.ext4挂载swap分区用mkswap用mount挂载根分区到&#x2F;mnt新建efi挂">
+    <meta name="description" content="如何使用vim1.光标移动gg移到第一行行首G移到最后一行行首nG&#x2F;ngg移到n行行首H移到当前页面的第一行行首M移到当前页面的中间行行首L移到当前页面的最后一行行首0移到当前行行首$移到当前行行尾W以空格区分移到下一个单词tX移到光标后的第一个X字符处TX移到光标前的第一个X字符处Ctrl+u向上翻页Ctrl+d向下翻页 2.搜索&#x2F;word在当前文档中光标之后搜索字符串“word”?w">
 <meta property="og:type" content="article">
-<meta property="og:title" content="uefi安装ArchLinux">
-<meta property="og:url" content="http://example.com/2022/08/01/uefi%E5%AE%89%E8%A3%85ArchLinux/index.html">
+<meta property="og:title" content="vim使用手册">
+<meta property="og:url" content="http://example.com/2022/08/01/vim%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/index.html">
 <meta property="og:site_name" content="一个小博客">
-<meta property="og:description" content="准备使用iwctl连网_略换源 12reflector -c China --save &#x2F;etc&#x2F;pacman.d&#x2F;mirrorlistsystemctl stop reflector 调整时间 1timedatectl set-ntp true 分区lsblk看分区名cfdisk分区格式化分区用mkfs.ext4挂载swap分区用mkswap用mount挂载根分区到&#x2F;mnt新建efi挂">
+<meta property="og:description" content="如何使用vim1.光标移动gg移到第一行行首G移到最后一行行首nG&#x2F;ngg移到n行行首H移到当前页面的第一行行首M移到当前页面的中间行行首L移到当前页面的最后一行行首0移到当前行行首$移到当前行行尾W以空格区分移到下一个单词tX移到光标后的第一个X字符处TX移到光标前的第一个X字符处Ctrl+u向上翻页Ctrl+d向下翻页 2.搜索&#x2F;word在当前文档中光标之后搜索字符串“word”?w">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-01T00:44:09.000Z">
-<meta property="article:modified_time" content="2022-08-01T00:47:47.408Z">
+<meta property="article:published_time" content="2022-08-01T00:51:15.000Z">
+<meta property="article:modified_time" content="2022-08-01T00:54:02.225Z">
 <meta property="article:author" content="storm-1614">
-<meta property="article:tag" content="ArchLinux">
-<meta property="article:tag" content="安装">
-<meta property="article:tag" content="正经">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>uefi安装ArchLinux - 一个小博客</title>
+  <title>vim使用手册 - 一个小博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +195,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="uefi安装ArchLinux"></span>
+            <span id="subtitle" data-typed-text="vim使用手册"></span>
           
         </div>
 
@@ -209,7 +206,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-01 08:44" pubdate>
+        <time datetime="2022-08-01 08:51" pubdate>
           2022年8月1日 早上
         </time>
       </span>
@@ -221,7 +218,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          884 字
         
       </span>
     
@@ -232,7 +229,7 @@
         
         
         
-          13 分钟
+          8 分钟
         
       </span>
     
@@ -270,40 +267,20 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">uefi安装ArchLinux</h1>
+            <h1 style="display: none">vim使用手册</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>使用iwctl连网_略<br>换源</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">reflector -c China --save /etc/pacman.d/mirrorlist<br>systemctl stop reflector<br></code></pre></td></tr></table></figure>
-<p>调整时间</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">timedatectl set-ntp <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-<h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><p><code>lsblk</code>看分区名<br><code>cfdisk</code>分区<br>格式化分区用<code>mkfs.ext4</code><br>挂载swap分区用<code>mkswap</code><br>用mount挂载根分区到&#x2F;mnt<br>新建efi挂载点文件夹</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -p /mnt/boot/efi<br></code></pre></td></tr></table></figure>
-<p>然后挂载</p>
-<h3 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">pacstrap /mnt linux-zen linux-firmware linux-zen-headers <span class="hljs-keyword">base</span> <span class="hljs-keyword">base</span>-devel neovim <span class="hljs-keyword">base</span>-completion networkmanager dhcpcd<br></code></pre></td></tr></table></figure>
-<h3 id="写进分区表"><a href="#写进分区表" class="headerlink" title="写进分区表"></a>写进分区表</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">genfstab -U <span class="hljs-regexp">/mnt &gt;&gt; /m</span>nt<span class="hljs-regexp">/etc/</span>fstab<br></code></pre></td></tr></table></figure>
-<h3 id="进系统-amp-安装引导"><a href="#进系统-amp-安装引导" class="headerlink" title="进系统&amp;安装引导"></a>进系统&amp;安装引导</h3><p>用arch-chroot进系统然后安装grub引导</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br>pacman -Sy<br>pacman -S grub efibootmgr efivar intel-ucode os-prober ntfs-3g<br></code></pre></td></tr></table></figure>
-<p>到<code>/etc/default/grub</code>取消注释os-prober的一行（一般在最后一行）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-install /dev/……<br>grub-mkconfig -o /boot/grub/grub.cfg<br>passwd root<br>systemctl <span class="hljs-built_in">enable</span> NetworkManager<br><span class="hljs-built_in">exit</span><br>reboot<br></code></pre></td></tr></table></figure>
-<h3 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h3><p>用<code>nmtui</code>联网<br><code>nvim /etc/hostname</code>写下arch<br>在<code>nvim /etc/hosts</code>写下</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span>	localhost<br>::<span class="hljs-number">1</span>		localhost<br><span class="hljs-number">127.0.1.1</span>	arch.localdomain	arch<br></code></pre></td></tr></table></figure>
-<p>设置时间</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">timedatectl</span> <span class="hljs-built_in">set-timezone</span> <span class="hljs-string">Asia</span>/<span class="hljs-string">Shanghai</span> &amp;&amp; <span class="hljs-string">ln</span> -<span class="hljs-string">sf</span> /<span class="hljs-string">usr</span>/<span class="hljs-string">share</span>/<span class="hljs-string">zoneinfo</span>/<span class="hljs-string">Asia</span>/<span class="hljs-string">Shanghai</span> /<span class="hljs-string">etc</span>/<span class="hljs-string">localtime</span> &amp;&amp; <span class="hljs-string">hwclock</span> <span class="hljs-built_in">--systohc</span><br><span class="hljs-string">timedatectl</span> <span class="hljs-built_in">set-ntp</span> <span class="hljs-string">true</span><br></code></pre></td></tr></table></figure>
-<p>在&#96;&#x2F;etc&#x2F;skel&#x2F;.bashrc写下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">EDITOR=<span class="hljs-string">&#x27;nvim&#x27;</span><br></code></pre></td></tr></table></figure>
-<p>然后<code>cp -a /etc/skel/. ~</code><br>重启</p>
-<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">useradd --create-home storm<br>passwd storm<br>usermod -aG adm,wheel,storage storm<br></code></pre></td></tr></table></figure>
-<p><code>visudo</code><br>删除%wheel ALL&#x3D;(ALL:ALL) ALL前面的#<br>然后重启</p>
-<h3 id="本地化配置"><a href="#本地化配置" class="headerlink" title="本地化配置"></a>本地化配置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">nvim <span class="hljs-regexp">/etc/</span>locale.gen<br></code></pre></td></tr></table></figure>
-<p>编辑&#x2F;etc&#x2F;locale.gen文件,删除en_US.UTF-8 UTF-8和zh_CN.UTF-8 UTF-8前面的#<br><code>locale-gen</code><br><code>nvim /etc/locale.conf</code><br>写下LANG&#x3D;”en_US.UTF-8”<br>重启</p>
-<h3 id="安装plasma"><a href="#安装plasma" class="headerlink" title="安装plasma"></a>安装plasma</h3><p>安装核显驱动</p>
-<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">pacman -S mesa xf86-video-<span class="hljs-built_in">int</span>el vulkan-<span class="hljs-built_in">int</span>el<br></code></pre></td></tr></table></figure>
-<p>安装plasma</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">pacman -S plasma plasma-meta konsole dolphin kate ark gwenview vlc firefox<br>firefox-i18n-zh-cn packagekit-qt5<br>systemctl <span class="hljs-built_in">enable</span> sddm<br></code></pre></td></tr></table></figure>
-<p>重启后就可以了</p>
+                <h2 id="如何使用vim"><a href="#如何使用vim" class="headerlink" title="如何使用vim"></a>如何使用vim</h2><h3 id="1-光标移动"><a href="#1-光标移动" class="headerlink" title="1.光标移动"></a>1.光标移动</h3><p><code>gg</code>移到第一行行首<br><code>G</code>移到最后一行行首<br><code>nG</code>&#x2F;<code>ngg</code>移到n行行首<br><code>H</code>移到当前页面的第一行行首<br><code>M</code>移到当前页面的中间行行首<br><code>L</code>移到当前页面的最后一行行首<br><code>0</code>移到当前行行首<br><code>$</code>移到当前行行尾<br><code>W</code>以空格区分移到下一个单词<br><code>tX</code>移到光标后的第一个X字符处<br><code>TX</code>移到光标前的第一个X字符处<br><code>Ctrl+u</code>向上翻页<br><code>Ctrl+d</code>向下翻页</p>
+<h3 id="2-搜索"><a href="#2-搜索" class="headerlink" title="2.搜索"></a>2.搜索</h3><p><code>/word</code>在当前文档中光标之后搜索字符串“word”<br><code>?word</code>在当前文档中光标前搜索字符串“word”<br><code>n</code>重复前一个搜索动作<br><code>N</code>重复前一个搜索动作的反向动作  </p>
+<h3 id="3-删除"><a href="#3-删除" class="headerlink" title="3.删除"></a>3.删除</h3><p><code>x</code>向后删除一个字符<br><code>X</code>向前删除一个字符<br><code>nx</code>数字+x,连续向后删除n个字符，nX同<br><code>dd</code>删除光标所在的一整行<br><code>ndd</code>数字+dd,删除从光标所在行开始向下n行<br><code>dG</code>删除光标后的所有数据<br><code>d$</code>删除光标所在行中光标后的所有数据<br><code>d0</code>删除光标所在行中光标之前的所有数据  </p>
+<h3 id="4-复制"><a href="#4-复制" class="headerlink" title="4.复制"></a>4.复制</h3><p><code>yy</code>复制光标所在行<br><code>nyy</code>复制光标所在行向下开始向下的n行<br><code>y1G</code>复制光标所在行到第一行的所有数据<br><code>yG</code>复制光标所在行到最后一行的所有数据<br><code>y0</code>复制光标之前到行首的所有数据<br><code>y$</code>复制光标之后到行尾的所有数据  </p>
+<h3 id="5-粘贴"><a href="#5-粘贴" class="headerlink" title="5.粘贴"></a>5.粘贴</h3><p><code>p</code> 将复制的数据粘贴到下一行<br><code>P</code>将复制的数据粘贴到上一行  </p>
+<h3 id="6-其他"><a href="#6-其他" class="headerlink" title="6.其他"></a>6.其他</h3><p><code>J</code>将光标所在行与下一行结合为一行<br><code>u</code>撤销<br><code>Ctrl+r</code>恢复<br><code>.</code>重复上一个动作  </p>
+<h3 id="7-命令模式"><a href="#7-命令模式" class="headerlink" title="7.命令模式"></a>7.命令模式</h3><p><code>:w</code>保存文档<br><code>:q</code>退出vim<br><code>:q!</code>不保存退出vim<br><code>:wq</code>&#x2F;<code>:x</code>保存并退出vim  </p>
+<h3 id="标签页操作"><a href="#标签页操作" class="headerlink" title="标签页操作"></a>标签页操作</h3><p><code>:tabedit &#123;filename&#125;</code>，<code>:tabnew</code>打开新的标签页<br><code>:tabc</code>关闭当前标签页<br><code>:tabo</code>关闭除了当前的其他标签页<br><code>gt</code>,<code>gT</code>切换标签页<br><code>:tabmove n</code>移动标签页  </p>
+<h3 id="分割窗口"><a href="#分割窗口" class="headerlink" title="分割窗口"></a>分割窗口</h3><p><code>:split</code>把屏幕分解成两个窗口并把光标置于上面的窗口中<br><code>CTRL+W w</code>，<code>CTRL+W CTRL+W</code>窗口跳转<br><code>:close</code>关闭窗口<br><code>:&#123;n&#125;split</code>打开一个三行的窗口<br><code>:CTRL+W +</code>扩大窗口<br><code>CTRL+W -</code>缩小窗口<br><code>&#123;n&#125;CTRL+W _</code>设定窗口指定高度<br><code>vsplit</code>垂直分割<br><code>CTRL+Wh,j,k,l</code>跳转<br><code>CTRL+W t,b</code>跳转到最顶，底的窗口  </p>
 
                 
               </div>
@@ -313,17 +290,6 @@
               <div class="post-metas my-3">
   
   
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/ArchLinux/">#ArchLinux</a>
-      
-        <a href="/tags/%E5%AE%89%E8%A3%85/">#安装</a>
-      
-        <a href="/tags/%E6%AD%A3%E7%BB%8F/">#正经</a>
-      
-    </div>
-  
 </div>
 
 
@@ -332,8 +298,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>uefi安装ArchLinux</div>
-      <div>http://example.com/2022/08/01/uefi安装ArchLinux/</div>
+      <div>vim使用手册</div>
+      <div>http://example.com/2022/08/01/vim使用手册/</div>
     </div>
     <div class="license-meta">
       
@@ -375,18 +341,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/01/vim%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/" title="vim使用手册">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">vim使用手册</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/08/01/hello/" title="hello">
-                        <span class="hidden-mobile">hello</span>
+                      <a href="/2022/08/01/uefi%E5%AE%89%E8%A3%85ArchLinux/" title="uefi安装ArchLinux">
+                        <span class="hidden-mobile">uefi安装ArchLinux</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
