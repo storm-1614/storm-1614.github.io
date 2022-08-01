@@ -16,9 +16,9 @@
       
       <tag>Linux</tag>
       
-      <tag>教程</tag>
-      
       <tag>代理</tag>
+      
+      <tag>教程</tag>
       
     </tags>
     
@@ -265,11 +265,11 @@
       
       <tag>ArchLinux</tag>
       
-      <tag>安装</tag>
+      <tag>Docker</tag>
       
       <tag>Linux</tag>
       
-      <tag>Docker</tag>
+      <tag>安装</tag>
       
     </tags>
     
@@ -329,11 +329,11 @@
       
       <tag>Linux</tag>
       
+      <tag>教程</tag>
+      
       <tag>Vim</tag>
       
       <tag>Neovim</tag>
-      
-      <tag>教程</tag>
       
     </tags>
     
@@ -360,11 +360,11 @@
       
       <tag>ArchLinux</tag>
       
+      <tag>Linux</tag>
+      
       <tag>安装</tag>
       
       <tag>正经</tag>
-      
-      <tag>Linux</tag>
       
     </tags>
     
@@ -414,9 +414,9 @@
     
     <tags>
       
-      <tag>垃圾</tag>
-      
       <tag>文</tag>
+      
+      <tag>垃圾</tag>
       
       <tag>日记</tag>
       
@@ -443,9 +443,9 @@
     
     <tags>
       
-      <tag>诗</tag>
-      
       <tag>文</tag>
+      
+      <tag>诗</tag>
       
     </tags>
     
