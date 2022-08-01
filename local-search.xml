@@ -38,6 +38,12 @@
     <content type="html"><![CDATA[<h2 id="在虚拟机安装archlinux"><a href="#在虚拟机安装archlinux" class="headerlink" title="在虚拟机安装archlinux"></a>在虚拟机安装archlinux</h2><h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>环境：VirtualBox<br>镜像：archlinux livecd 2022.6</p><h3 id="创建虚拟机"><a href="#创建虚拟机" class="headerlink" title="创建虚拟机"></a>创建虚拟机</h3><p>只需要创建一个类型为archlinux的虚拟机就好</p><h3 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h3><p>在成功进入到命令行后首先需要换源  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">reflector -c China --save /etc/pacman.d/mirrorlist<br>systemctl stop reflector<br>pacman -Sy<br></code></pre></td></tr></table></figure><h3 id="分区-amp-挂载"><a href="#分区-amp-挂载" class="headerlink" title="分区&amp;挂载"></a>分区&amp;挂载</h3><p>使用cfdisk分区，只需要将所有空间分给linux filesystem就好了<br>用<code>mkfs.ext4</code>进行格式化  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkfs.ext4 /dev/sda1<br></code></pre></td></tr></table></figure><p>然后挂载</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">mount /dev/sda1 /mount<br></code></pre></td></tr></table></figure><h3 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h3><p>用<code>pacstrap</code>脚本安装基本系统</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt linux linux-firmware base base-devel neovim networkmanager grub<br></code></pre></td></tr></table></figure><h3 id="进入基本系统"><a href="#进入基本系统" class="headerlink" title="进入基本系统"></a>进入基本系统</h3><p>写入分区表  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<br></code></pre></td></tr></table></figure><p>然后进入基本系统：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br></code></pre></td></tr></table></figure><h3 id="安装引导"><a href="#安装引导" class="headerlink" title="安装引导"></a>安装引导</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-install /dev/sda<br>grub-mkconfig -o /boot/grub/grub.cfg<br>passwd root<br>systemctl <span class="hljs-built_in">enable</span> NetworkManager<br></code></pre></td></tr></table></figure>]]></content>
     
     
+    <categories>
+      
+      <category>ArchLinux</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -60,6 +66,12 @@
     
     <content type="html"><![CDATA[<h2 id="平铺插件"><a href="#平铺插件" class="headerlink" title="平铺插件"></a>平铺插件</h2><p>我在plasma上使用的是叫grid-tiling的平铺插件，这是一个非常好用的插件，可以在plasma上体验到平铺窗口管理器上的高效  </p><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://github.com/lingtjien/Grid-Tiling-Kwin">github</a><br><a href="https://aur.archlinux.org/packages/kwin-script-grid-tiling-git">aur</a></p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在arch linux上grid-tiling在aur上，所以我们需要一个aur助手，我选择yay这个aur助手<br>然后输入<code>yay -S kwin-script-grid-tiling-git</code>安装</p><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="1-切换使用窗口"><a href="#1-切换使用窗口" class="headerlink" title="1.切换使用窗口"></a>1.切换使用窗口</h4><p>使用<code>super + alt + 方向左</code>切换到左边窗口<br>同理，使用<code>super + alt + 方向右</code>切换到右边窗口</p><h4 id="2-更换窗口位置"><a href="#2-更换窗口位置" class="headerlink" title="2.更换窗口位置"></a>2.更换窗口位置</h4><p><code>super + ctrl + 方向左</code>将窗口向左侧移动<br><code>super + ctrl + 方向右</code>将窗口向右侧移动</p><h4 id="3-调整窗口大小"><a href="#3-调整窗口大小" class="headerlink" title="3.调整窗口大小"></a>3.调整窗口大小</h4><p><code>super + +</code>将当前窗口增大<br><code>super + _</code>将当前窗口缩小</p><h4 id="4-其他"><a href="#4-其他" class="headerlink" title="4.其他"></a>4.其他</h4><p><code>super + b</code>显示当前窗口边框<br><code>super + t</code>退出平铺模式</p>]]></content>
     
+    
+    <categories>
+      
+      <category>KDE</category>
+      
+    </categories>
     
     
     <tags>
@@ -86,6 +98,12 @@
     <content type="html"><![CDATA[<h2 id="配置nvim"><a href="#配置nvim" class="headerlink" title="配置nvim"></a>配置nvim</h2><p>###依赖</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs cmake">yay -S nvim fzf python-pip npm yarn notejs clang<br>pip <span class="hljs-keyword">install</span> neovim<br></code></pre></td></tr></table></figure><h3 id="复制配置文件"><a href="#复制配置文件" class="headerlink" title="复制配置文件"></a>复制配置文件</h3><p>首先复制nvim文件夹到~&#x2F;.config<br>之后打开nvim,运行<code>:PackerSync</code>即可完成插件安装  </p><h3 id="后续配置"><a href="#后续配置" class="headerlink" title="后续配置"></a>后续配置</h3><h4 id="coc-nvim"><a href="#coc-nvim" class="headerlink" title="coc.nvim"></a>coc.nvim</h4><p><code>coc.nivm</code>需要进插件文件夹运行<code>yarn install</code>方可使用  </p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sh"><span class="hljs-built_in">cd</span> .<span class="hljs-built_in">local</span>/share/nvim/site/pack/packer/start/coc.nvim/<br>yarn install<br></code></pre></td></tr></table></figure><p>之后打开nvim<br>运行：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim">:CocInstall coc-<span class="hljs-keyword">sh</span> coc-clangd coc-html coc-sumneko-<span class="hljs-keyword">lua</span> coc-markdownlint<br></code></pre></td></tr></table></figure><h3 id="插件列表"><a href="#插件列表" class="headerlink" title="插件列表"></a>插件列表</h3><p>插件管理器：packer.nvim<br>主题：nord.nvim<br>lsp：coc.nvim<br>文件查找：nvim-fzf<br>文件树：nvim-tree.lua<br>markdown阅读：markdown-preview.nvim<br>代码高亮：nvim-treesitter<br>状态栏：nvim-lualine<br>颜色块显示：vim-css-color</p>]]></content>
     
     
+    <categories>
+      
+      <category>Vim</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -106,6 +124,12 @@
     
     <content type="html"><![CDATA[<h2 id="fcitx5安装配置"><a href="#fcitx5安装配置" class="headerlink" title="fcitx5安装配置"></a>fcitx5安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装fcitx5：  </p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S fcitx5-im fcitx5-chinese-addons fcitx5-pinyin-moegirl fcitx5-pinyin-zhwiki<br></code></pre></td></tr></table></figure><p>配置环境变量<br>新建文件 <code>~/.pam_environment</code>添加</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs routeros">GTK_IM_MODULE <span class="hljs-attribute">DEFAULT</span>=fcitx<br>QT_IM_MODULE  <span class="hljs-attribute">DEFAULT</span>=fcitx<br>XMODIFIERS    <span class="hljs-attribute">DEFAULT</span>=\@im=fcitx<br>INPUT_METHOD  <span class="hljs-attribute">DEFAULT</span>=fcitx<br>SDL_IM_MODULE <span class="hljs-attribute">DEFAULT</span>=fcitx<br>GLFW_IM_MODULE <span class="hljs-attribute">DEFAULT</span>=ibus<br></code></pre></td></tr></table></figure><p>重启后完成</p><h3 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">yay</span> -S fcitx5-nord<br></code></pre></td></tr></table></figure><p>到fcitx5设置-附加组件-经典用户界面-主题调整</p>]]></content>
     
+    
+    <categories>
+      
+      <category>Fcitx</category>
+      
+    </categories>
     
     
     <tags>
@@ -130,6 +154,12 @@
     <content type="html"><![CDATA[<p><img src="https://s3.bmp.ovh/imgs/2022/08/01/e206d5c388ad746b.jpg"></p>]]></content>
     
     
+    <categories>
+      
+      <category>图片</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -148,6 +178,12 @@
     
     <content type="html"><![CDATA[<h2 id="dwm快捷键"><a href="#dwm快捷键" class="headerlink" title="dwm快捷键"></a>dwm快捷键</h2><p><code>win + e</code>打开文件管理器(dolophin)<br><code>win + d</code>打开rofi<br><code>win + shift + a</code>截图<br><code>win + p</code> 同上，截图<br><code>win + c</code> 打开firefox<br><code>win + shift + c</code>打开浏览器未用<br><code>win + shift + l</code>电源未用<br><code>win + shift +m</code>emoji<br><code>win + shift + w</code>快捷查看窗口<br><code>win + r</code>切换壁纸未用<br><code>win + f</code>打开firefox未用<br><code>win + return</code>打开终端<br><code>win + b</code>隐藏状态栏<br><code>win + shift + b</code>与<code>win + shift + p</code>不同方向交换窗口位置<br><code>win + j/k</code>左右交换光标所在窗口<br><code>win + shift + j/k</code>同上<br><code>win + i</code>和<code>win + shift + i</code>切换窗口垂直或横向逻辑<br><code>win + h/l</code>左右调整窗口占比<br><code>win + shift + return</code>交换两个刚打开窗口的位置<br><code>win + tab</code>交换标签<br><code>win + q</code>关闭当前窗口<br><code>win + t</code>窗口改为平铺逻辑<br><code>win + n</code>窗口改为浮动逻辑<br><code>win + m</code>窗口改为当然窗口占满逻辑<br><code>win + shift + f</code>当然窗口全屏<br><code>win + space</code>切换当前tag平铺或浮动<br><code>win + shift + space</code>切换窗口平铺或浮动<br><code>win + 0</code>显示全部窗口<br><code>win + v</code>隐藏窗口  </p>]]></content>
     
+    
+    <categories>
+      
+      <category>DE</category>
+      
+    </categories>
     
     
     <tags>
@@ -171,6 +207,12 @@
     
     <content type="html"><![CDATA[<h2 id="arch安装docker"><a href="#arch安装docker" class="headerlink" title="arch安装docker"></a>arch安装docker</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">sudo pacman -S docker</span><br></code></pre></td></tr></table></figure><h3 id="开启docker服务"><a href="#开启docker服务" class="headerlink" title="开启docker服务"></a>开启docker服务</h3><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">sudo systemctl <span class="hljs-keyword">enable</span> <span class="hljs-comment">--now docker</span><br></code></pre></td></tr></table></figure><h3 id="以当前用户运行docker命令"><a href="#以当前用户运行docker命令" class="headerlink" title="以当前用户运行docker命令"></a>以当前用户运行docker命令</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">sudo</span> groupadd docker<br><br>sudo gpasswd -a <span class="hljs-variable">$&#123;USER&#125;</span> docker<br><br>newgrp <span class="hljs-variable">$&#123;USER&#125;</span><br></code></pre></td></tr></table></figure><h3 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h3><p>拉取镜像：  </p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">docker pull image_name</span><br></code></pre></td></tr></table></figure><p>创建容器：<br>以ubuntu镜像，容器名称为linux举例  </p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">docker <span class="hljs-built_in">run</span> -i -t <span class="hljs-comment">--name linux ubuntu bash</span><br></code></pre></td></tr></table></figure><p>运行容器：</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">docker <span class="hljs-literal">start</span> -i linux<br></code></pre></td></tr></table></figure>]]></content>
     
+    
+    <categories>
+      
+      <category>Docker</category>
+      
+    </categories>
     
     
     <tags>
@@ -196,6 +238,12 @@
     
     <content type="html"><![CDATA[<h2 id="触摸板"><a href="#触摸板" class="headerlink" title="触摸板"></a>触摸板</h2><p>由于dwm的原因，触摸板没办法使用所以我们进行一些配置  </p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S libinput<br>sudo pacman -S xf86-input-synaptics<br></code></pre></td></tr></table></figure><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">sudo cp <span class="hljs-regexp">/usr/</span>share<span class="hljs-regexp">/X11/</span>xorg.conf.d<span class="hljs-regexp">/70-synaptics.conf /</span>etc<span class="hljs-regexp">/X11/</span>xorg.conf.d<br></code></pre></td></tr></table></figure><p>&#x2F;etc&#x2F;X11&#x2F;xorg.conf.d&#x2F;70-synaptics.conf</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">Section</span> <span class="hljs-string">&quot;InputClass&quot;</span><br>Identifier <span class="hljs-string">&quot;touchpad&quot;</span><br>Driver <span class="hljs-string">&quot;synaptics&quot;</span><br>MatchIsTouchpad <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;TapButton1&quot;</span> <span class="hljs-string">&quot;1&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;TapButton2&quot;</span> <span class="hljs-string">&quot;3&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;TapButton3&quot;</span> <span class="hljs-string">&quot;0&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;VertEdgeScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;VertTwoFingerScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;HorizEdgeScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;HorizTwoFingerScroll&quot;</span> <span class="hljs-string">&quot;on&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;VertScrollDelta&quot;</span> <span class="hljs-string">&quot;-112&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;HorizScrollDelta&quot;</span> <span class="hljs-string">&quot;-114&quot;</span><br><span class="hljs-meta">Option</span> <span class="hljs-string">&quot;MaxTapTime&quot;</span> <span class="hljs-string">&quot;125&quot;</span><br>EndSection<br></code></pre></td></tr></table></figure>]]></content>
     
+    
+    <categories>
+      
+      <category>DE</category>
+      
+    </categories>
     
     
     <tags>
@@ -224,6 +272,12 @@
     <content type="html"><![CDATA[<h2 id="如何使用vim"><a href="#如何使用vim" class="headerlink" title="如何使用vim"></a>如何使用vim</h2><h3 id="1-光标移动"><a href="#1-光标移动" class="headerlink" title="1.光标移动"></a>1.光标移动</h3><p><code>gg</code>移到第一行行首<br><code>G</code>移到最后一行行首<br><code>nG</code>&#x2F;<code>ngg</code>移到n行行首<br><code>H</code>移到当前页面的第一行行首<br><code>M</code>移到当前页面的中间行行首<br><code>L</code>移到当前页面的最后一行行首<br><code>0</code>移到当前行行首<br><code>$</code>移到当前行行尾<br><code>W</code>以空格区分移到下一个单词<br><code>tX</code>移到光标后的第一个X字符处<br><code>TX</code>移到光标前的第一个X字符处<br><code>Ctrl+u</code>向上翻页<br><code>Ctrl+d</code>向下翻页</p><h3 id="2-搜索"><a href="#2-搜索" class="headerlink" title="2.搜索"></a>2.搜索</h3><p><code>/word</code>在当前文档中光标之后搜索字符串“word”<br><code>?word</code>在当前文档中光标前搜索字符串“word”<br><code>n</code>重复前一个搜索动作<br><code>N</code>重复前一个搜索动作的反向动作  </p><h3 id="3-删除"><a href="#3-删除" class="headerlink" title="3.删除"></a>3.删除</h3><p><code>x</code>向后删除一个字符<br><code>X</code>向前删除一个字符<br><code>nx</code>数字+x,连续向后删除n个字符，nX同<br><code>dd</code>删除光标所在的一整行<br><code>ndd</code>数字+dd,删除从光标所在行开始向下n行<br><code>dG</code>删除光标后的所有数据<br><code>d$</code>删除光标所在行中光标后的所有数据<br><code>d0</code>删除光标所在行中光标之前的所有数据  </p><h3 id="4-复制"><a href="#4-复制" class="headerlink" title="4.复制"></a>4.复制</h3><p><code>yy</code>复制光标所在行<br><code>nyy</code>复制光标所在行向下开始向下的n行<br><code>y1G</code>复制光标所在行到第一行的所有数据<br><code>yG</code>复制光标所在行到最后一行的所有数据<br><code>y0</code>复制光标之前到行首的所有数据<br><code>y$</code>复制光标之后到行尾的所有数据  </p><h3 id="5-粘贴"><a href="#5-粘贴" class="headerlink" title="5.粘贴"></a>5.粘贴</h3><p><code>p</code> 将复制的数据粘贴到下一行<br><code>P</code>将复制的数据粘贴到上一行  </p><h3 id="6-其他"><a href="#6-其他" class="headerlink" title="6.其他"></a>6.其他</h3><p><code>J</code>将光标所在行与下一行结合为一行<br><code>u</code>撤销<br><code>Ctrl+r</code>恢复<br><code>.</code>重复上一个动作  </p><h3 id="7-命令模式"><a href="#7-命令模式" class="headerlink" title="7.命令模式"></a>7.命令模式</h3><p><code>:w</code>保存文档<br><code>:q</code>退出vim<br><code>:q!</code>不保存退出vim<br><code>:wq</code>&#x2F;<code>:x</code>保存并退出vim  </p><h3 id="标签页操作"><a href="#标签页操作" class="headerlink" title="标签页操作"></a>标签页操作</h3><p><code>:tabedit &#123;filename&#125;</code>，<code>:tabnew</code>打开新的标签页<br><code>:tabc</code>关闭当前标签页<br><code>:tabo</code>关闭除了当前的其他标签页<br><code>gt</code>,<code>gT</code>切换标签页<br><code>:tabmove n</code>移动标签页  </p><h3 id="分割窗口"><a href="#分割窗口" class="headerlink" title="分割窗口"></a>分割窗口</h3><p><code>:split</code>把屏幕分解成两个窗口并把光标置于上面的窗口中<br><code>CTRL+W w</code>，<code>CTRL+W CTRL+W</code>窗口跳转<br><code>:close</code>关闭窗口<br><code>:&#123;n&#125;split</code>打开一个三行的窗口<br><code>:CTRL+W +</code>扩大窗口<br><code>CTRL+W -</code>缩小窗口<br><code>&#123;n&#125;CTRL+W _</code>设定窗口指定高度<br><code>vsplit</code>垂直分割<br><code>CTRL+Wh,j,k,l</code>跳转<br><code>CTRL+W t,b</code>跳转到最顶，底的窗口  </p>]]></content>
     
     
+    <categories>
+      
+      <category>Vim</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -249,6 +303,12 @@
     <content type="html"><![CDATA[<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>使用iwctl连网_略<br>换源</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">reflector -c China --save /etc/pacman.d/mirrorlist<br>systemctl stop reflector<br></code></pre></td></tr></table></figure><p>调整时间</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">timedatectl set-ntp <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure><h3 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h3><p><code>lsblk</code>看分区名<br><code>cfdisk</code>分区<br>格式化分区用<code>mkfs.ext4</code><br>挂载swap分区用<code>mkswap</code><br>用mount挂载根分区到&#x2F;mnt<br>新建efi挂载点文件夹</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> -p /mnt/boot/efi<br></code></pre></td></tr></table></figure><p>然后挂载</p><h3 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs csharp">pacstrap /mnt linux-zen linux-firmware linux-zen-headers <span class="hljs-keyword">base</span> <span class="hljs-keyword">base</span>-devel neovim <span class="hljs-keyword">base</span>-completion networkmanager dhcpcd<br></code></pre></td></tr></table></figure><h3 id="写进分区表"><a href="#写进分区表" class="headerlink" title="写进分区表"></a>写进分区表</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">genfstab -U <span class="hljs-regexp">/mnt &gt;&gt; /m</span>nt<span class="hljs-regexp">/etc/</span>fstab<br></code></pre></td></tr></table></figure><h3 id="进系统-amp-安装引导"><a href="#进系统-amp-安装引导" class="headerlink" title="进系统&amp;安装引导"></a>进系统&amp;安装引导</h3><p>用arch-chroot进系统然后安装grub引导</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br>pacman -Sy<br>pacman -S grub efibootmgr efivar intel-ucode os-prober ntfs-3g<br></code></pre></td></tr></table></figure><p>到<code>/etc/default/grub</code>取消注释os-prober的一行（一般在最后一行）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-install /dev/……<br>grub-mkconfig -o /boot/grub/grub.cfg<br>passwd root<br>systemctl <span class="hljs-built_in">enable</span> NetworkManager<br><span class="hljs-built_in">exit</span><br>reboot<br></code></pre></td></tr></table></figure><h3 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h3><p>用<code>nmtui</code>联网<br><code>nvim /etc/hostname</code>写下arch<br>在<code>nvim /etc/hosts</code>写下</p><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs accesslog"><span class="hljs-number">127.0.0.1</span>localhost<br>::<span class="hljs-number">1</span>localhost<br><span class="hljs-number">127.0.1.1</span>arch.localdomainarch<br></code></pre></td></tr></table></figure><p>设置时间</p><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">timedatectl</span> <span class="hljs-built_in">set-timezone</span> <span class="hljs-string">Asia</span>/<span class="hljs-string">Shanghai</span> &amp;&amp; <span class="hljs-string">ln</span> -<span class="hljs-string">sf</span> /<span class="hljs-string">usr</span>/<span class="hljs-string">share</span>/<span class="hljs-string">zoneinfo</span>/<span class="hljs-string">Asia</span>/<span class="hljs-string">Shanghai</span> /<span class="hljs-string">etc</span>/<span class="hljs-string">localtime</span> &amp;&amp; <span class="hljs-string">hwclock</span> <span class="hljs-built_in">--systohc</span><br><span class="hljs-string">timedatectl</span> <span class="hljs-built_in">set-ntp</span> <span class="hljs-string">true</span><br></code></pre></td></tr></table></figure><p>在&#96;&#x2F;etc&#x2F;skel&#x2F;.bashrc写下</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">EDITOR=<span class="hljs-string">&#x27;nvim&#x27;</span><br></code></pre></td></tr></table></figure><p>然后<code>cp -a /etc/skel/. ~</code><br>重启</p><h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">useradd --create-home storm<br>passwd storm<br>usermod -aG adm,wheel,storage storm<br></code></pre></td></tr></table></figure><p><code>visudo</code><br>删除%wheel ALL&#x3D;(ALL:ALL) ALL前面的#<br>然后重启</p><h3 id="本地化配置"><a href="#本地化配置" class="headerlink" title="本地化配置"></a>本地化配置</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">nvim <span class="hljs-regexp">/etc/</span>locale.gen<br></code></pre></td></tr></table></figure><p>编辑&#x2F;etc&#x2F;locale.gen文件,删除en_US.UTF-8 UTF-8和zh_CN.UTF-8 UTF-8前面的#<br><code>locale-gen</code><br><code>nvim /etc/locale.conf</code><br>写下LANG&#x3D;”en_US.UTF-8”<br>重启</p><h3 id="安装plasma"><a href="#安装plasma" class="headerlink" title="安装plasma"></a>安装plasma</h3><p>安装核显驱动</p><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">pacman -S mesa xf86-video-<span class="hljs-built_in">int</span>el vulkan-<span class="hljs-built_in">int</span>el<br></code></pre></td></tr></table></figure><p>安装plasma</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs routeros">pacman -S plasma plasma-meta konsole dolphin kate ark gwenview vlc firefox<br>firefox-i18n-zh-cn packagekit-qt5<br>systemctl <span class="hljs-built_in">enable</span> sddm<br></code></pre></td></tr></table></figure><p>重启后就可以了</p>]]></content>
     
     
+    <categories>
+      
+      <category>ArchLinux</category>
+      
+    </categories>
+    
     
     <tags>
       
@@ -273,6 +333,12 @@
     
     <content type="html"><![CDATA[<h3 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h3><p>这里是storm-1614基于hexo搭建的博客中的第一篇<br>就如每个人的第一篇博客那样，就是垃圾中的废纸<br>那就让我们写下：</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">hello world</span><br></code></pre></td></tr></table></figure><h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3>]]></content>
     
+    
+    <categories>
+      
+      <category>垃圾</category>
+      
+    </categories>
     
     
     <tags>
