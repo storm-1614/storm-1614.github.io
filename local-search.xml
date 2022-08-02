@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>搭建hexo-admin管理博客</title>
+    <link href="/2022/08/02/%E6%90%AD%E5%BB%BAhexo-admin%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2022/08/02/%E6%90%AD%E5%BB%BAhexo-admin%E7%AE%A1%E7%90%86%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<h2 id="搭建hexo-admin管理博客"><a href="#搭建hexo-admin管理博客" class="headerlink" title="搭建hexo-admin管理博客"></a>搭建hexo-admin管理博客</h2><p>如果我们能够拥有一个后台用图形化现代化的方式管理博客，那种感觉是非常不错的。因此，hexo-admin提供了这个选择。  </p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>在博客目录下运行：</p><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">npm install hexo-<span class="hljs-keyword">admin</span> <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure><p>然后等待片刻就安装好了<br>之后运行<code>hexo s</code>然后打开浏览器输入：</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk">http:<span class="hljs-regexp">//</span>localhost:<span class="hljs-number">4000</span><span class="hljs-regexp">/admin/</span><br></code></pre></td></tr></table></figure><p>进入管理目录</p><p><img src="/images/pasted-1.png" alt="upload successful"><br>选择如下，然后输入username,passwd和secret,要设复杂点，不然过不去会报错。<br>然后复制如下代码到<code>_config.yml</code>最后就可以了<br><img src="/images/pasted-2.png" alt="upload successful"><br>之后再打开<code>http://localhost:4000/admin/</code>就会看到要用户名和密码，输入就可以进行博客管理</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022.8.1</title>
     <link href="/2022/08/01/2022-8-1/"/>
     <url>/2022/08/01/2022-8-1/</url>
